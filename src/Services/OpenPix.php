@@ -24,7 +24,7 @@ function makeClient(): Client
     }
 
     $appID = $env["openpix-php-sdk"]["appID"] ?? "";
-    if (empty($apiUrl)) $apiUrl = $_SERVER["HTTP_X_OPENPIX_APPID"] ?? "";
+    if (empty($appID)) $appID = $_SERVER["HTTP_X_OPENPIX_APPID"] ?? "";
     if (empty($appID)) $appID = getenv("OPENPIX_APPID");
     if (empty($appID)) {
         die("You need to submit the App ID. You can submit using the env.php file, the `X-OpenPix-AppID` header or the `OPENPIX_APP_ID` environment variable.");
